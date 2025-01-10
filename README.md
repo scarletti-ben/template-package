@@ -15,25 +15,22 @@ Sometimes, when you are developing a package, you want to be able to edit it wit
 # Installing from GitHub via `pip`
 You can install a package from `GitHub` using one of the methods listed below
 
-- Clone the repository and install to `site-packages`
-  - `git clone https://github.com/scarletti-ben/template-package`
+- Clone this branch of the repository and install to `site-packages`
+  - `git clone -b with-pyproject-toml https://github.com/scarletti-ben/template-package.git`
   - `pip install ./template-package`
 
-- Clone the repository and install in editable mode, for development
-  - `git clone https://github.com/scarletti-ben/template-package`
+- Clone this branch of the repository and install in editable mode, for development
+  - `git clone -b with-pyproject-toml https://github.com/scarletti-ben/template-package.git`
   - `pip install -e ./template-package`
 
 - Installing from the default branch to `site-packages`
   - `pip install git+https://github.com/scarletti-ben/template-package.git`
 
-- Installing from a specficic branch e.g. `main` to `site-packages`
-  - `pip install git+https://github.com/scarletti-ben/template-package.git@main`
+- Installing from this specific branch e.g. `with-project-toml` to `site-packages`
+  - `pip install git+https://github.com/scarletti-ben/template-package.git@with-pyproject-toml`
 
-- Installing from archive link to `site-packages`
-  - `pip install https://github.com/scarletti-ben/template-package/archive/master.zip`
-
-- Install in editable mode for development
-  - `pip install -e git+https://github.com/scarletti-ben/template-package.git`
+- Install from this specific branch in editable mode for development
+  - `pip install -e git+https://github.com/scarletti-ben/template-package.git@with-pyproject-toml#egg=template-package`
 
 # Miscellaneous
 
