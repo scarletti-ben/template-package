@@ -22,13 +22,13 @@ You can install a package from `GitHub` using one of the methods listed below
   - `git clone https://github.com/scarletti-ben/template-package`
   - `pip install -e ./template-package`
 
-- Installing from the default branch
+- Installing from the default branch to `site-packages`
   - `pip install git+https://github.com/scarletti-ben/template-package.git`
 
-- Installing from a specficic branch e.g. `main`
+- Installing from a specficic branch e.g. `main` to `site-packages`
   - `pip install git+https://github.com/scarletti-ben/template-package.git@main`
 
-- Installing from archive link
+- Installing from archive link to `site-packages`
   - `pip install https://github.com/scarletti-ben/template-package/archive/master.zip`
 
 - Install in editable mode for development
