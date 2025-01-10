@@ -54,6 +54,20 @@ build-backend = "setuptools.build_meta"
 - `.whl` and `.tar.gz` files from `python -m build` in the `dist` folder are the files that are uploaded for distribution on `PyPi`
 
 ### Example Command Line Output When Installing a Package
+- Installing a local package in regular mode
+```cmd
+C:\...\template-package> pip install .
+Processing C:\...\template-package
+  Preparing metadata (setup.py) ... done
+Building wheels for collected packages: template-package
+  Building wheel for template-package (setup.py) ... done
+  Created wheel for template-package: filename=template_package-0.1.0-py3-none-any.whl size=4249 sha256=...
+  Stored in directory: C:\...\...
+Successfully built template-package
+Installing collected packages: template-package
+Successfully installed template-package-0.1.0
+```
+
 - Installing a local package in editable mode
 ```cmd
 C:\...\template-package> pip install -e .
@@ -65,7 +79,7 @@ Successfully installed template-package-0.1.0
 ```
 
 - Checking that the package is installed
-```
+```cmd
 C:\...\template-package> pip show template-package
 Name: template-package
 Version: 0.1.0
@@ -81,7 +95,7 @@ Required-by:
 ```
 
 - Uninstalling the package
-```
+```cmd
 C:\...\template-package> pip uninstall template-package
 Found existing installation: template-package 0.1.0
 Uninstalling template-package-0.1.0:
