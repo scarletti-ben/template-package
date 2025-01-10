@@ -104,3 +104,92 @@ Uninstalling template-package-0.1.0:
 Proceed (Y/n)? y
   Successfully uninstalled template-package-0.1.0
 ```
+
+- Building the package for `PyPi`
+```powershell
+PS A\template-package> python -m build .
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools >= 40.8.0
+* Getting build dependencies for sdist...
+running egg_info
+writing src\template_package.egg-info\PKG-INFO
+writing dependency_links to src\template_package.egg-info\dependency_links.txt
+writing top-level names to src\template_package.egg-info\top_level.txt        
+reading manifest file 'src\template_package.egg-info\SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src\template_package.egg-info\SOURCES.txt'
+* Building sdist...
+running sdist
+running egg_info
+writing src\template_package.egg-info\PKG-INFO
+writing dependency_links to src\template_package.egg-info\dependency_links.txt
+writing top-level names to src\template_package.egg-info\top_level.txt
+reading manifest file 'src\template_package.egg-info\SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src\template_package.egg-info\SOURCES.txt'
+running check
+creating template_package-0.1.0
+creating template_package-0.1.0\src\template_package
+creating template_package-0.1.0\src\template_package.egg-info
+copying files to template_package-0.1.0...
+copying LICENSE -> template_package-0.1.0
+copying README.md -> template_package-0.1.0
+copying setup.py -> template_package-0.1.0
+copying src\template_package\__init__.py -> template_package-0.1.0\src\template_package
+copying src\template_package\moduleA.py -> template_package-0.1.0\src\template_package
+copying src\template_package.egg-info\PKG-INFO -> template_package-0.1.0\src\template_package.egg-info
+copying src\template_package.egg-info\SOURCES.txt -> template_package-0.1.0\src\template_package.egg-info
+copying src\template_package.egg-info\dependency_links.txt -> template_package-0.1.0\src\template_package.egg-info
+copying src\template_package.egg-info\top_level.txt -> template_package-0.1.0\src\template_package.egg-infocopying src\template_package.egg-info\SOURCES.txt -> template_package-0.1.0\src\template_package.egg-info
+Writing template_package-0.1.0\setup.cfg
+Creating tar archive
+removing 'template_package-0.1.0' (and everything under it)
+* Building wheel from sdist
+* Creating isolated environment: venv+pip...
+* Installing packages in isolated environment:
+  - setuptools >= 40.8.0
+* Getting build dependencies for wheel...
+running egg_info
+writing src\template_package.egg-info\PKG-INFO
+writing dependency_links to src\template_package.egg-info\dependency_links.txt
+writing top-level names to src\template_package.egg-info\top_level.txt
+reading manifest file 'src\template_package.egg-info\SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src\template_package.egg-info\SOURCES.txt'
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build\lib\template_package
+copying src\template_package\moduleA.py -> build\lib\template_package
+copying src\template_package\__init__.py -> build\lib\template_package
+installing to build\bdist.win-amd64\wheel
+running install
+running install_lib
+creating build\bdist.win-amd64\wheel
+creating build\bdist.win-amd64\wheel\template_package
+copying build\lib\template_package\moduleA.py -> build\bdist.win-amd64\wheel\.\template_package
+copying build\lib\template_package\__init__.py -> build\bdist.win-amd64\wheel\.\template_package
+running install_egg_info
+running egg_info
+writing src\template_package.egg-info\PKG-INFO
+writing dependency_links to src\template_package.egg-info\dependency_links.txt
+writing top-level names to src\template_package.egg-info\top_level.txt
+reading manifest file 'src\template_package.egg-info\SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'src\template_package.egg-info\SOURCES.txt'
+Copying src\template_package.egg-info to build\bdist.win-amd64\wheel\.\template_package-0.1.0-py3.10.egg-info
+running install_scripts
+creating build\bdist.win-amd64\wheel\template_package-0.1.0.dist-info\WHEEL
+creating 'C:\...\template-package\dist\.tmp-hys3oqg9\template_package-0.1.0-py3-none-any.whl' and adding 'build\bdist.win-amd64\wheel' to it
+adding 'template_package/__init__.py'
+adding 'template_package/moduleA.py'
+adding 'template_package-0.1.0.dist-info/LICENSE'
+adding 'template_package-0.1.0.dist-info/METADATA'
+adding 'template_package-0.1.0.dist-info/WHEEL'
+adding 'template_package-0.1.0.dist-info/top_level.txt'
+adding 'template_package-0.1.0.dist-info/RECORD'
+removing build\bdist.win-amd64\wheel
+Successfully built template_package-0.1.0.tar.gz and template_package-0.1.0-py3-none-any.whl
+```
