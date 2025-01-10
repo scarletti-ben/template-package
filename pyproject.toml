@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "template-package"
+version = "0.1.0"
+description = "Template package for Python"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "MIT" }
+
+authors = [
+    { name = "username", email = "username@email.com" }
+]
+
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/username/template-package"
+
+[tool.setuptools.packages.find]
+where = ["src"]
