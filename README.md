@@ -1,13 +1,23 @@
 # Template Package
 
-The purpose of this package is to serve as a template for future python packages. 
+The purpose of this package is to serve as a template for my future python packages.
 
-Usage of `setup.py` seems to be the older method of doing things, and is missing some of the quality-of-life features that you can find using `setup.cfg`, `pyproject.toml` or a dependency manager like [`Poetry`](https://python-poetry.org/).
+The different branches of this repository will essentially each have a slightly different way of structuring a python package. The first structure I learned was `setup.py` which seems to be the older method of doing things, and is missing some of the quality-of-life features that you can find using `setup.cfg`, `pyproject.toml` or a dependency manager like [`Poetry`](https://python-poetry.org/). When using older methods without a `.whl` (`wheel`) file and without `pyproject.toml`, `pip` may still try and make them from `setup.py`.
 
-As I am still learning the process of making python packages, the aim is to have different branches of this repository for the different methods of structuring, uploading and installing a python package, hopefully including the methods above eg. `pyproject.toml`.
+This `README` should also detail how to install and uninstall this package, either from the `GitHub` URL or locally.
 
-# Command Line Output
-Below is the sort of command line output that is to be expected when installing / checking / uninstalling a package with `setup.py`
+# Notes on Pip
+Python's package installer is called `pip` and it allows you to install packages that are hosted on the package index [`PyPi`](https://pypi.org/), hosted on [`GitHub`](https://github.com/) or even locally from your system.
+
+By default, if you are not working in a virtual environment, `pip` installs packages to the `site-packages` folder.
+
+# Installing a Local Package via `pip`
+If you have a local package on your system that hasn't been installed via pip, navigate to the package's root directory and run `pip install .`, this will install the package to python's `site-packages` folder, much like a regular package hosted on `PyPi`.
+
+Sometimes, when you are developing a package, you want to be able to edit it without having to uninstall or reinstall it. One way to do this is to install the local package in editable mode via `pip install -e .`.This will create a symbolic link to the local package in python's `site-packages` folder, and will create a `template-package.egg-link` for your package. If you change the files in your package, changes will be reflected immediately in the installed version.
+
+### Command Line Output When Installing a Package
+- Installing a local package in editable mode
 ```cmd
 C:\...\template-package> pip install -e .
 Obtaining file:///C:/.../template-package
@@ -15,7 +25,10 @@ Obtaining file:///C:/.../template-package
 Installing collected packages: template-package
   Running setup.py develop for template-package
 Successfully installed template-package-0.1.0
+```
 
+- Checking the installed package
+```
 C:\...\template-package> pip show template-package
 Name: template-package
 Version: 0.1.0
@@ -28,7 +41,10 @@ Location: C:\...\template-package\src
 Editable project location: C:\...\template-package\src
 Requires: 
 Required-by:
+```
 
+- Uninstalling the package
+```
 C:\...\template-package> pip uninstall template-package
 Found existing installation: template-package 0.1.0
 Uninstalling template-package-0.1.0:
@@ -38,29 +54,25 @@ Proceed (Y/n)? y
   Successfully uninstalled template-package-0.1.0
 ```
 
-# The `setup.py` File
+# Installing from GitHub
+You can install a package from `GitHub` using one of the methods listed below
 
-```python
-AUTHOR = 'username'
-EMAIL = 'username@email.com'
-PACKAGE_NAME = 'template-package'
-VERSION = '0.1.0'
-PACKAGE_LOCATION = 'src'
-URL = f'https://github.com/{AUTHOR}/{PACKAGE_NAME}'
-LICENSE = 'MIT'
-DESCRIPTION = 'Template package for Python'
-PYTHON_VERSION = '>=3.7'
-REQUIREMENTS = []
+- Clone the repository and install to `site-packages`
+  - `git clone https://github.com/scarletti-ben/template-package`
+  - `pip install ./template-package`
 
-with open('README.md', "r") as f:
-    LONG_DESCRIPTION = f.read()
-LONG_DESCRIPTION_TYPE = "text/markdown"
-```
+- Clone the repository and install in editable mode, for development
+  - `git clone https://github.com/scarletti-ben/template-package`
+  - `pip install -e ./template-package`
 
-# Egg
-- Creates `template-package/src/template_package.egg-info` folder
-  - Deleted when you uninstall
+- Installing from the default branch
+  - `pip install git+https://github.com/scarletti-ben/template-package.git`
 
+- Installing from a specficic branch e.g. `main`
+  - `pip install git+https://github.com/scarletti-ben/template-package.git@main`
 
-# Other
-In command line `python -c "from template_package.moduleA import test; test()"`
+- Installing from archive link
+  - `pip install https://github.com/scarletti-ben/template-package/archive/master.zip`
+
+- Install in editable mode for development
+  - `pip install -e git+https://github.com/scarletti-ben/template-package.git`
