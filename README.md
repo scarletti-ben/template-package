@@ -6,6 +6,10 @@ The different branches of this repository will each have a slightly different wa
 
 When using older methods without a `.whl` (`wheel`) file and without a `pyproject.toml` file, `pip` may still try and make them from `setup.py`.
 
+### Branch Information
+This branch relies on `pyproject.toml` and is a newer approach of package structuring
+- The other branch which uses a `setup.py` file can be found [here](https://github.com/scarletti-ben/template-package/tree/with-setup-py)
+
 # Installing a Local Package via `pip`
 If you have a local package on your system that hasn't been installed via pip, navigate to the package's root directory and run `pip install .`, this will install the package to python's `site-packages` folder, much like a regular package hosted on `PyPi`.
 
