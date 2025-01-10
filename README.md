@@ -1,10 +1,13 @@
 # Template Package
-
 The purpose of this package is to serve as a template for my future python packages.
 
 The different branches of this repository will each have a slightly different way of structuring a python package. The first structure I learned was `setup.py` which seems to be the older method of doing things, and is missing some of the quality-of-life features that you can find with structures including `setup.cfg`, `pyproject.toml`, `.whl` (`wheel`) files, or a dependency manager like [`Poetry`](https://python-poetry.org/). 
 
 When using older methods without a `.whl` (`wheel`) file and without a `pyproject.toml` file, `pip` may still try and make them from `setup.py`.
+
+### Branch Information
+This branch relies on `setup.py` and is an older approach of package structuring
+- The other branch which uses a `pyproject.toml` file can be found [here](https://github.com/scarletti-ben/template-package/tree/with-pyproject-toml)
 
 # Installing a Local Package via `pip`
 If you have a local package on your system that hasn't been installed via pip, navigate to the package's root directory and run `pip install .`, this will install the package to python's `site-packages` folder, much like a regular package hosted on `PyPi`.
